@@ -1,0 +1,384 @@
+<?php
+
+require __DIR__ . '/php/login-php/protection.php';
+require __DIR__ . '/php/accueil/controleur.php'; ?>
+
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DjikoStream - Tendances</title>
+
+    <link rel="stylesheet" href="css/variables.css">
+    <link rel="stylesheet" href="css/typography.css">
+    <link rel="stylesheet" href="css/base.css">
+    <link rel="stylesheet" href="css/components.css">
+    <link rel="stylesheet" href="css/home.css">
+    <link rel="stylesheet" href="css/catalogue.css">
+    <link rel="stylesheet" href="css/cartes-dynamiques.css">
+</head>
+<body>
+    <header class="site-header">
+        <div class="header-inner">
+            <a class="brand" href="index.html" aria-label="Accueil DjikoStream">
+                <div class="brand-logo">
+                    <span>Djiko</span>
+                    <span>Stream</span>
+                </div>
+                <p class="brand-tagline">Films • Séries • Univers à découvrir</p>
+            </a>
+
+            <nav class="navigation" aria-label="Navigation principale">
+                <a class="navigation-link" href="index.html">Accueil</a>
+                <a class="navigation-link is-active" href="tendances.html">Tendances</a>
+                <a class="navigation-link" href="films.html">Films</a>
+                <a class="navigation-link" href="series.html">Séries</a>
+                <a class="navigation-link" href="a-propos.html">À propos</a>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+        
+
+<div class="filters-toolbar">
+
+    <details class="filter-dropdown">
+
+        <summary class="filter-button">
+
+            <svg width="19" height="19"
+                 viewBox="0 0 24 24"
+                 fill="none"
+                 stroke="currentColor"
+                 stroke-width="2"
+                 stroke-linecap="round"
+                 stroke-linejoin="round">
+
+                <path d="M4 7h16"/>
+                <path d="M7 12h10"/>
+                <path d="M10 17h4"/>
+
+            </svg>
+
+            <span>Filtres</span>
+
+        </summary>
+
+        <div class="filter-panel">
+
+            <label for="filtre-genre">
+                Filtrer par genre
+            </label>
+
+            <select id="filtre-genre">
+                <option value="all">Tous les genres</option>
+                <option value="28">Action</option>
+                <option value="12">Aventure</option>
+                <option value="35">Comédie</option>
+                <option value="18">Drame</option>
+                <option value="14">Fantastique</option>
+                <option value="27">Horreur</option>
+                <option value="878">Science-fiction</option>
+                <option value="53">Thriller</option>
+            </select>
+
+        </div>
+
+    </details>
+
+</div>
+
+
+
+        <section class="hero">
+            <div class="hero-content">
+                <p class="hero-kicker">En ce moment</p>
+                <h1>Tendances</h1>
+                <p class="hero-description">Les contenus qui font parler aujourd’hui, avec une structure déjà prête pour TMDB.</p>
+
+                <div class="search-block">
+                    <form class="search-form" id="search-form">
+                        <label class="visually-hidden" for="search-input">
+                            Rechercher un film ou une série
+                        </label>
+
+                        <input
+                            class="search-input"
+                            id="search-input"
+                            type="search"
+                            placeholder="Rechercher un film ou une série..."
+                            autocomplete="off"
+                        >
+
+                        <button class="search-button" type="submit">
+                            Rechercher
+                        </button>
+                    </form>
+                </div>
+            </div>
+        </section>
+
+        <section class="search-results-section" id="search-results-section">
+            <div class="container">
+                <div class="section-header">
+                    <div>
+                        <h2>Résultats de recherche</h2>
+                        <p>Les résultats correspondant à votre recherche apparaîtront ici.</p>
+                    </div>
+                </div>
+                <div class="media-grid" id="search-results"></div>
+            </div>
+        </section>
+
+        <section class="catalogue-shell">
+            <div class="container">
+                <div class="section-header">
+                    <div>
+                        <h2>Tendances</h2>
+                        <p>Cette grille est prête pour ton futur appel TMDB Trending.</p>
+                    </div>
+                </div>
+
+                <div class="media-grid" id="trending-grid">
+                    <article class="media-card">
+                        <div class="poster-container">
+                            <img
+                                class="media-poster"
+                                
+                                alt="Affiche de Dune: Part Two"
+                            >
+                        </div>
+
+                        <div class="media-card-content">
+                            <h3>Dune: Part Two</h3>
+                            <p class="media-meta">Film • Science-fiction</p>
+                            <span class="media-badge">Tendance</span>
+                        </div>
+                    </article>
+                    <article class="media-card">
+                        <div class="poster-container">
+                            <img
+                                class="media-poster"
+                                
+                                alt="Affiche de The Batman"
+                            >
+                        </div>
+
+                        <div class="media-card-content">
+                            <h3>The Batman</h3>
+                            <p class="media-meta">Film • Policier / Action</p>
+                            <span class="media-badge">Tendance</span>
+                        </div>
+                    </article>
+                    <article class="media-card">
+                        <div class="poster-container">
+                            <img
+                                class="media-poster"
+                                
+                                alt="Affiche de The Last of Us"
+                            >
+                        </div>
+
+                        <div class="media-card-content">
+                            <h3>The Last of Us</h3>
+                            <p class="media-meta">Série • Drame</p>
+                            <span class="media-badge">Tendance</span>
+                        </div>
+                    </article>
+                    <article class="media-card">
+                        <div class="poster-container">
+                            <img
+                                class="media-poster"
+                                
+                                alt="Affiche de Shōgun"
+                            >
+                        </div>
+
+                        <div class="media-card-content">
+                            <h3>Shōgun</h3>
+                            <p class="media-meta">Série • Drame historique</p>
+                            <span class="media-badge">Tendance</span>
+                        </div>
+                    </article>
+                </div>
+            </div>
+        </section>
+
+        <section class="catalogue-shell catalogue-secondary">
+            <div class="container">
+                <div class="section-header">
+                    <div>
+                        <h2>Films trouvés</h2>
+                        <p>Cette zone permet à ton JavaScript de recherche actuel de continuer à fonctionner sur cette page.</p>
+                    </div>
+                </div>
+
+                <div class="media-grid" id="movies-grid">
+                    <article class="media-card">
+                        <div class="poster-container">
+                            <img
+                                class="media-poster"
+                                
+                                alt="Affiche de Interstellar"
+                            >
+                        </div>
+
+                        <div class="media-card-content">
+                            <h3>Interstellar</h3>
+                            <p class="media-meta">2014 • Christopher Nolan</p>
+                            <span class="media-badge">Film</span>
+                        </div>
+                    </article>
+                    <article class="media-card">
+                        <div class="poster-container">
+                            <img
+                                class="media-poster"
+                                
+                                alt="Affiche de Gladiator"
+                            >
+                        </div>
+
+                        <div class="media-card-content">
+                            <h3>Gladiator</h3>
+                            <p class="media-meta">2000 • Ridley Scott</p>
+                            <span class="media-badge">Film</span>
+                        </div>
+                    </article>
+                    <article class="media-card">
+                        <div class="poster-container">
+                            <img
+                                class="media-poster"
+                                
+                                alt="Affiche de The Dark Knight"
+                            >
+                        </div>
+
+                        <div class="media-card-content">
+                            <h3>The Dark Knight</h3>
+                            <p class="media-meta">2008 • Christopher Nolan</p>
+                            <span class="media-badge">Film</span>
+                        </div>
+                    </article>
+                    <article class="media-card">
+                        <div class="poster-container">
+                            <img
+                                class="media-poster"
+                                
+                                alt="Affiche de Mad Max: Fury Road"
+                            >
+                        </div>
+
+                        <div class="media-card-content">
+                            <h3>Mad Max: Fury Road</h3>
+                            <p class="media-meta">2015 • George Miller</p>
+                            <span class="media-badge">Film</span>
+                        </div>
+                    </article>
+                </div>
+            </div>
+        </section>
+
+        <section class="catalogue-shell catalogue-secondary">
+            <div class="container">
+                <div class="section-header">
+                    <div>
+                        <h2>Séries trouvées</h2>
+                        <p>Cette zone permet à ton JavaScript de recherche actuel de continuer à fonctionner sur cette page.</p>
+                    </div>
+                </div>
+
+                <div class="media-grid" id="series-grid">
+                    <article class="media-card">
+                        <div class="poster-container">
+                            <img
+                                class="media-poster"
+                                
+                                alt="Affiche de Reacher"
+                            >
+                        </div>
+
+                        <div class="media-card-content">
+                            <h3>Reacher</h3>
+                            <p class="media-meta">Action • Série</p>
+                            <span class="media-badge">Série</span>
+                        </div>
+                    </article>
+                    <article class="media-card">
+                        <div class="poster-container">
+                            <img
+                                class="media-poster"
+                                
+                                alt="Affiche de The Night Agent"
+                            >
+                        </div>
+
+                        <div class="media-card-content">
+                            <h3>The Night Agent</h3>
+                            <p class="media-meta">Action / Thriller • Série</p>
+                            <span class="media-badge">Série</span>
+                        </div>
+                    </article>
+                    <article class="media-card">
+                        <div class="poster-container">
+                            <img
+                                class="media-poster"
+                                
+                                alt="Affiche de The Boys"
+                            >
+                        </div>
+
+                        <div class="media-card-content">
+                            <h3>The Boys</h3>
+                            <p class="media-meta">Action • Série</p>
+                            <span class="media-badge">Série</span>
+                        </div>
+                    </article>
+                    <article class="media-card">
+                        <div class="poster-container">
+                            <img
+                                class="media-poster"
+                                
+                                alt="Affiche de Fallout"
+                            >
+                        </div>
+
+                        <div class="media-card-content">
+                            <h3>Fallout</h3>
+                            <p class="media-meta">Science-fiction • Série</p>
+                            <span class="media-badge">Série</span>
+                        </div>
+                    </article>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="site-footer">
+        <div class="container footer-inner">
+            <p>Votre prochaine histoire commence ici.</p>
+            <p>© 2026 DjikoStream</p>
+        </div>
+    </footer>
+
+    <!-- Garde tes fichiers JavaScript actuels dans le dossier js/ -->
+    <!-- Modèle HTML réutilisable pour les cartes (invisible tant que JS ne le clone pas). -->
+    <template id="modele-carte-media">
+        <article class="media-card">
+            <div class="poster-container">
+                <img class="media-poster" alt="">
+            </div>
+            <div class="media-card-content">
+                <h3></h3>
+                <p class="media-meta"></p>
+                <span class="media-badge"></span>
+            </div>
+        </article>
+    </template>
+
+    <script src="js/config.js"></script>
+    <script src="js/variables.js"></script>
+    <script src="js/script.js"></script>
+</body>
+</html>

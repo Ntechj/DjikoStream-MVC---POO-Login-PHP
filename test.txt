@@ -1,0 +1,24 @@
+ Pour m'enregistrer et me connecter. Je pense que je devrai renseigner dans un fichier php
+ mes informations personnelles exemple
+
+ logs.php 
+
+ $logs = [ 
+            "email" => "antho.elec@outlook.fr"
+            "mdp" => djikostream
+        ]
+
+
+$erreur = "mot de passe ou email incorrect, veuillez remplir tout les champs !"
+
+je dois utiliser des conditions
+traduis en français ça donnerrai 
+
+si le champ émail et mot de passe sont vides
+alors var_dump($erreur)
+
+et si l'émail n'est pas === à $logs['email']
+et le champ mot de passe n'est pas === à $logs['mdp']
+alors var_dump($erreur)
+
+sinon accède à Djikostream
